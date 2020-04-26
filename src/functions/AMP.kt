@@ -3,9 +3,12 @@ package functions
 import java.util.*
 
 fun main(args: Array<String>) {
-    println("Hello, world!")
+    //to use an argument in main function, edit configuration on program arguments
+    // then use string templates to fetch the fist element in the array(expression)
+    println("Hello, ${args[0]}!")
 
     dayOfWeek()
+    time(12.toString())
 }
 fun dayOfWeek(){
     println ("What day is it today?")
@@ -24,4 +27,8 @@ fun dayOfWeek(){
     }
 
     println(stringToPrint)
+}
+fun time(arg: String){
+//if statement in string template
+    println("${if (arg[0].toInt() < 12) "Good morning, Kotlin" else "Good night, Kotlin"}")
 }
