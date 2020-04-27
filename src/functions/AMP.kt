@@ -33,10 +33,18 @@ fun time(arg: String){
 //if statement in string template
     println("${if (arg[0].toInt() < 12) "Good morning, Kotlin" else "Good night, Kotlin"}")
 }
+
+fun shouldChangeWater(day: String,
+                      temperature: Int = 22,
+                      dirty: Int = 20){
+
+}
 fun feedTheFish(){
     val day = randomDay()
     val food = fishFood(day)
     println("Today is $day and the fish eat $food")
+
+    shouldChangeWater(day, dirty = 50)
 }
 
 fun fishFood(day : String ): String {
