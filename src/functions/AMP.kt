@@ -38,7 +38,7 @@ fun feedTheFish(){
     val food = "pellets"
     println("Today is $day and the fish eat $food")
 }
-//returns a random day using Random library
+//returns a random day using a java library for random
 fun randomDay(): String{
  val week = listOf("Monday","Tuesday","Wednesday","Thursday","Friday"," Saturday", "Sunday")
     return week[Random().nextInt(7)]
