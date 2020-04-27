@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
 
     dayOfWeek()
     time(12.toString())
+    feedTheFish()
 }
 fun dayOfWeek(){
     println ("What day is it today?")
@@ -31,4 +32,14 @@ fun dayOfWeek(){
 fun time(arg: String){
 //if statement in string template
     println("${if (arg[0].toInt() < 12) "Good morning, Kotlin" else "Good night, Kotlin"}")
+}
+fun feedTheFish(){
+    val day = randomDay()
+    val food = "pellets"
+    println("Today is $day and the fish eat $food")
+}
+//returns a random day using Random library
+fun randomDay(): String{
+ val week = listOf("Monday","Tuesday","Wednesday","Thursday","Friday"," Saturday", "Sunday")
+    return week[Random().nextInt(7)]
 }
