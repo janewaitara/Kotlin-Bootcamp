@@ -23,6 +23,7 @@ fun main(args: Array<String>) {
     }
 }
 
+
 fun getFortuneCookie(): String {
 
     val fortune = listOf("You will have a great day!",

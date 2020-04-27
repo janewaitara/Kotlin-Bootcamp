@@ -35,9 +35,24 @@ fun time(arg: String){
 }
 fun feedTheFish(){
     val day = randomDay()
-    val food = "pellets"
+    val food = fishFood(day)
     println("Today is $day and the fish eat $food")
 }
+
+fun fishFood(day : String ): String {
+//using when to return a value...unlike switch, when breaks on itself.
+// whenever its not assigned to a variable, one must pass an else statement
+    return when(day){
+        "Monday" -> "flakes"
+        "Tuesday" -> "pellets"
+        "Wednesday" -> "redworms"
+        "Thursday" -> "granules"
+        "Saturday" -> "plankton"
+        else -> "fasting"
+    }
+
+}
+
 //returns a random day using a java library for random
 fun randomDay(): String{
  val week = listOf("Monday","Tuesday","Wednesday","Thursday","Friday"," Saturday", "Sunday")
