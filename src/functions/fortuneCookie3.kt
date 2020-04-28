@@ -5,7 +5,10 @@ package functions
 Change your fortune cookie program to use repeat()
 instead of a for loop. What happens to the break instruction?
 Using the error message from the compiler,
-with what you've learned so far, can you think of why?*/
+with what you've learned so far, can you think of why?
+
+Change your fortune cookie program to use a while loop,
+which is the better choice when you are looping until a condition is met.*/
 
 
 
