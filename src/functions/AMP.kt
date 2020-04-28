@@ -10,7 +10,24 @@ fun main(args: Array<String>) {
     dayOfWeek()
     time(12.toString())
     feedTheFish()
+    controlFunctions()
 }
+
+fun controlFunctions() {
+    var bubbles = 0
+
+            //cannot assign a variable to a for loop and while loop
+    while (bubbles < 50){
+        bubbles++
+    }
+    println(bubbles)
+
+    //repeat function for standard library
+    repeat(3){
+        println("A fish is swimming")
+    }
+}
+
 fun dayOfWeek(){
     println ("What day is it today?")
 
