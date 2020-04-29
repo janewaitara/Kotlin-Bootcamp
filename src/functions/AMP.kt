@@ -134,7 +134,7 @@ fun randomDay(): String {
 }
 
 var dirty = 20
-var waterDirty = { dirt: Int -> dirt / 2 }  //lambda
+var waterDirty = { dirt: Int -> dirt / 2 }  //lambda with parameters
 var waterFilter: (Int) -> Int = { dirt -> dirt / 2 }//kotlin function types
 fun feedFish(dirty: Int) = dirty + 10
 
@@ -146,5 +146,5 @@ fun dirtyProcessor() {
     dirty = updateDirty(dirty , waterFilter )
     dirty = updateDirty(dirty, ::feedFish) //to pass a named function we use double colon ->
     // kotlin know you are not trying to call it lets you pass reference
-    dirty = updateDirty(dirty) { dirty -> dirty + 50} //last parameter call syntax
+    dirty = updateDirty(dirty) { dirty -> dirty + 50} //last parameter call syntax where the lambda can be in () or not
 }
