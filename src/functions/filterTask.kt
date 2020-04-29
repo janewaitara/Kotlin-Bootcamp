@@ -19,8 +19,7 @@ fun main() {
     println(filterLetters)
     //filtering a list by : first three words starting with c
     val filterFirstThree = spices.take(3).filter{it.startsWith('c')}
-g            /*
-            or spices.filterIndexed { index, string ->
+       /*or spices.filterIndexed { index, string ->
         (index == 0 || index == 1|| index == 2) && (string.startsWith('c'))
     }*/
     println(filterFirstThree)

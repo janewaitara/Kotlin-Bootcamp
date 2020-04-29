@@ -8,11 +8,11 @@ fun main(args: Array<String>) {
 
     println("Hello, ${args[0]}!")
 
-    dayOfWeek()
-    time(12.toString())
+    //dayOfWeek()
+    //time(12.toString())
     feedTheFish()
-    controlFunctions()
-    eagerExample()
+    //controlFunctions()
+    //eagerExample()
 }
 
 fun eagerExample() {
@@ -92,6 +92,7 @@ fun shouldChangeWater(day: String,
 
 fun getDirtySensorReading(): Int = 20 //using a fun's return value as a default parameter of another function
 
+//single-expression functions
 fun isTooHot(temperature: Int): Boolean = temperature > 30
 fun isDirty(dirty: Int): Boolean = dirty > 30
 fun isSunday(day: String): Boolean = day == "Sunday"
@@ -102,7 +103,12 @@ fun feedTheFish() {
     val food = fishFood(day)
     println("Today is $day and the fish eat $food")
 
-    println(shouldChangeWater(day, dirty = 50))
+    if (shouldChangeWater(day, dirty = 50)) {
+        println("Change the water today")
+    }
+
+    dirtyProcessor()
+
 }
 
 fun fishFood(day: String): String {
@@ -125,4 +131,20 @@ fun fishFood(day: String): String {
 fun randomDay(): String {
     val week = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", " Saturday", "Sunday")
     return week[Random().nextInt(7)]
+}
+
+var dirty = 20
+var waterDirty = { dirt: Int -> dirt / 2 }  //lambda
+var waterFilter: (Int) -> Int = { dirt -> dirt / 2 }//kotlin function types
+fun feedFish(dirty: Int) = dirty + 10
+
+fun updateDirty(dirty: Int, operation: (Int) -> Int): Int { //higher order fun -> takes a fun as an arg
+    return operation(dirty)
+}
+
+fun dirtyProcessor() {
+    dirty = updateDirty(dirty , waterFilter )
+    dirty = updateDirty(dirty, ::feedFish) //to pass a named function we use double colon ->
+    // kotlin know you are not trying to call it lets you pass reference
+    dirty = updateDirty(dirty) { dirty -> dirty + 50} //last parameter call syntax
 }
